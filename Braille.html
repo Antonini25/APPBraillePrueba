@@ -2,62 +2,35 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Braille Hola</title>
+    <title>Braille Interactivo</title>
     <link rel="stylesheet" href="Braille.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>Hola en Braille</h1>
 
-    <div class="controls">
-        <button id="menos">−</button>
-        <button id="mas">+</button>
+    <h1 id="titulo">Braille</h1>
+
+    <!-- Entrada de texto -->
+    <div class="input-area">
+        <input type="text" id="texto" placeholder="Escribe una palabra">
+        <button id="convertir">Convertir</button>
     </div>
 
-    <div class="braille" id="braille">
+    <!-- Contenedor relativo -->
+    <div class="braille-container">
 
-        <!-- H -->
-        <div class="cell">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+        <!-- Botones flotantes -->
+        <div class="controls">
+            <button id="menos">−</button>
+            <button id="mas">+</button>
         </div>
 
-        <!-- O -->
-        <div class="cell">
-            <div class="dot active"></div>
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-        <!-- L -->
-        <div class="cell">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-        <!-- A -->
-        <div class="cell">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
+        <!-- Braille dinámico -->
+        <div class="braille" id="braille"></div>
 
     </div>
+
 </div>
 
 <script src="Braille.js"></script>
