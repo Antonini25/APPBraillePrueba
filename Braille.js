@@ -1,14 +1,15 @@
 const dots = document.querySelectorAll(".dot");
 
 dots.forEach(dot => {
-    dot.addEventListener("click", () => {
+    dot.addEventListener("mouseenter", () => {
 
-        // Efecto visual al presionar
-        dot.classList.toggle("active");
+        // Solo vibra si es un punto real del braille
+        if (dot.classList.contains("active")) {
 
-        // Vibración (si el dispositivo lo permite)
-        if (navigator.vibrate) {
-            navigator.vibrate(100);
+            if (navigator.vibrate) {
+                navigator.vibrate(80);
+            }
+
         }
     });
 });
