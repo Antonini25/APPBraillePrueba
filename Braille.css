@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,53 +13,9 @@ body {
     touch-action: none;
 }
 
+/* CONTENIDO */
 .container {
     text-align: center;
-}
-
-/* INPUT */
-.input-area {
-    margin-bottom: 20px;
-}
-
-input {
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: none;
-    margin-right: 10px;
-}
-
-.input-area button {
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    background: #00ffcc;
-    cursor: pointer;
-}
-
-/* CONTENEDOR RELATIVO */
-.braille-container {
-    position: relative;
-    display: inline-block;
-}
-
-/* BOTONES SOBRE EL BRAILLE */
-.controls {
-    position: absolute;
-    top: -50px;
-    right: 0;
-}
-
-.controls button {
-    font-size: 1.5rem;
-    padding: 8px 15px;
-    margin-left: 10px;
-    border: none;
-    border-radius: 10px;
-    background: #00ffcc;
-    cursor: pointer;
 }
 
 /* BRAILLE */
@@ -66,7 +23,7 @@ input {
     display: flex;
     gap: 25px;
     transform: scale(1.35);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s;
 }
 
 .cell {
@@ -88,6 +45,50 @@ input {
     box-shadow: 0 0 12px #00ffcc;
 }
 
-.dot:hover {
-    transform: scale(1.15);
+/* MENÚ */
+.menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.menu.active {
+    left: 0;
+}
+
+.menu h2 {
+    margin-top: 0;
+}
+
+.control {
+    margin-bottom: 20px;
+}
+
+.menu input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.menu button {
+    margin-top: 10px;
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* BOTÓN MENU */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
 }
