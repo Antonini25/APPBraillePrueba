@@ -7,27 +7,32 @@
 </head>
 <body>
 
-<!-- Botón menú -->
+<!-- BOTÓN HAMBURGUESA -->
 <button id="toggleMenu" class="menu-btn">☰</button>
 
-<!-- Menú lateral -->
+<!-- MENÚ -->
 <div id="menu" class="menu">
     <h2>Opciones</h2>
 
     <div class="control">
-        <label>Zoom</label><br>
-        <button id="menos">−</button>
-        <button id="mas">+</button>
+        <label>Zoom</label>
+        <div class="zoom-buttons">
+            <button id="menos">−</button>
+            <button id="mas">+</button>
+        </div>
     </div>
 
     <div class="control">
-        <label>Texto</label><br>
-        <input type="text" id="texto" placeholder="Escribe aquí">
+        <label>Texto</label>
+        <input type="text" id="texto" placeholder="Escribe una palabra">
         <button id="convertir">Convertir</button>
     </div>
 </div>
 
-<!-- Contenido -->
+<!-- FONDO OSCURO AL ABRIR -->
+<div id="overlay"></div>
+
+<!-- CONTENIDO -->
 <div class="container">
     <h1>Braille</h1>
     <div class="braille" id="braille"></div>
