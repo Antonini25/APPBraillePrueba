@@ -34,16 +34,17 @@ h1 {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #ffffff33;
-    cursor: pointer;
-    transition: 0.2s;
+    background: #ffffff22;
 }
 
+/* Puntos activos (letras braille reales) */
 .dot.active {
     background: #00ffcc;
     box-shadow: 0 0 10px #00ffcc;
 }
 
+/* Efecto al pasar el mouse (simula dedo) */
 .dot:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 0 15px #ffffffaa;
 }
