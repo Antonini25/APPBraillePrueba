@@ -3,15 +3,24 @@ const btnMas = document.getElementById("mas");
 const btnMenos = document.getElementById("menos");
 const btnConvertir = document.getElementById("convertir");
 const input = document.getElementById("texto");
+
 const menu = document.getElementById("menu");
 const toggleMenu = document.getElementById("toggleMenu");
+const overlay = document.getElementById("overlay");
 
 let scale = 1.35;
 let lastDot = null;
 
-/* MENU */
+/* MENU FUNCIONAL */
 toggleMenu.addEventListener("click", () => {
     menu.classList.toggle("active");
+    overlay.classList.toggle("active");
+});
+
+/* Cerrar tocando fuera */
+overlay.addEventListener("click", () => {
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
 });
 
 /* BRAILLE MAP */
@@ -58,7 +67,7 @@ function renderizar(texto){
 
 /* VIBRAR */
 function vibrar(dot){
-    if(dot.classList.contains("active") && dot!==lastDot){
+    if(dot.classList.contains("active") && dot !== lastDot){
         if(navigator.vibrate){
             navigator.vibrate(60);
         }
@@ -79,13 +88,13 @@ document.addEventListener("touchmove", (e)=>{
 document.addEventListener("touchmove", e=>e.preventDefault(), {passive:false});
 
 /* ZOOM */
-btnMas.onclick = ()=> {
+btnMas.onclick = ()=>{
     scale += 0.1;
     braille.style.transform = `scale(${scale})`;
 };
 
-btnMenos.onclick = ()=> {
-    if(scale>0.5){
+btnMenos.onclick = ()=>{
+    if(scale > 0.5){
         scale -= 0.1;
         braille.style.transform = `scale(${scale})`;
     }
