@@ -1,8 +1,12 @@
 const dots = document.querySelectorAll(".dot");
+const braille = document.getElementById("braille");
+const btnMas = document.getElementById("mas");
+const btnMenos = document.getElementById("menos");
 
-// Para evitar vibraciones repetidas infinitas
 let lastDot = null;
+let scale = 1.35; // tamaño inicial
 
+// Vibración
 function vibrar(dot) {
     if (dot.classList.contains("active") && dot !== lastDot) {
 
@@ -14,14 +18,14 @@ function vibrar(dot) {
     }
 }
 
-// 🖱️ Mouse (computadora)
+// Mouse
 dots.forEach(dot => {
     dot.addEventListener("mouseenter", () => {
         vibrar(dot);
     });
 });
 
-// 📱 Touch (celular)
+// Touch
 document.addEventListener("touchmove", (e) => {
     const touch = e.touches[0];
 
@@ -35,7 +39,21 @@ document.addEventListener("touchmove", (e) => {
     }
 }, { passive: false });
 
-// Evita que el dedo mueva la pantalla
+// Bloquear scroll
 document.addEventListener("touchmove", (e) => {
     e.preventDefault();
 }, { passive: false });
+
+
+// 🔍 BOTONES DE ZOOM
+btnMas.addEventListener("click", () => {
+    scale += 0.1;
+    braille.style.transform = `scale(${scale})`;
+});
+
+btnMenos.addEventListener("click", () => {
+    if (scale > 0.5) {
+        scale -= 0.1;
+        braille.style.transform = `scale(${scale})`;
+    }
+});
