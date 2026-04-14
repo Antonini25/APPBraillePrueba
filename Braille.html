@@ -7,30 +7,30 @@
 </head>
 <body>
 
-<div class="container">
+<!-- Botón menú -->
+<button id="toggleMenu" class="menu-btn">☰</button>
 
-    <h1 id="titulo">Braille</h1>
+<!-- Menú lateral -->
+<div id="menu" class="menu">
+    <h2>Opciones</h2>
 
-    <!-- Entrada de texto -->
-    <div class="input-area">
-        <input type="text" id="texto" placeholder="Escribe una palabra">
+    <div class="control">
+        <label>Zoom</label><br>
+        <button id="menos">−</button>
+        <button id="mas">+</button>
+    </div>
+
+    <div class="control">
+        <label>Texto</label><br>
+        <input type="text" id="texto" placeholder="Escribe aquí">
         <button id="convertir">Convertir</button>
     </div>
+</div>
 
-    <!-- Contenedor relativo -->
-    <div class="braille-container">
-
-        <!-- Botones flotantes -->
-        <div class="controls">
-            <button id="menos">−</button>
-            <button id="mas">+</button>
-        </div>
-
-        <!-- Braille dinámico -->
-        <div class="braille" id="braille"></div>
-
-    </div>
-
+<!-- Contenido -->
+<div class="container">
+    <h1>Braille</h1>
+    <div class="braille" id="braille"></div>
 </div>
 
 <script src="Braille.js"></script>
